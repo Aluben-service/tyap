@@ -1,139 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./script.js"></script>
-    <link href="./style.css" type="text/css" rel="stylesheet">
-</head>
-<body>
-    <a href = "https://www.wikipedia.org/">
-        <img src="https://raw.githubusercontent.com/asc2563/tyap-v2/main/hole.png" class="logo" alt="logo"/>
-    </a>
-    <div id="search" class = "search">
-        <input
-          type="text"
-          onchange="prepere_search(this.value)"
-          placeholder="search the web"
-          id = "input"
-        />
-        <button onclick="search()">search</button>
-      </div>
-        <button onclick="settings(document.getElementById('settings'))" class="settings">...
-      </button>
-      <div id = "settings" style="display: none">
-        <div id="SEdiv">
-          <span class = "big">set search engine</span>
-          <select id="SE">
-            <option value="https://www.google.com/search?q=" id="Google">
-              Default (Google)
-            </option>
-            <option value="https://www.bing.com/search?q=" id="Bing">Bing</option>
-            <option value="https://search.yahoo.com/search?q=" id="Yahoo">
-              Yahoo
-            </option>
-            <option value="https://openverse.org/search/?q=" id="Openverse">
-              Openverse
-            </option>
-            <option
-              value="https://en.wikipedia.org/wiki/Special:Search?go=Go&search="
-              id="Wiki"
-            >
-              Wiki
-            </option>
-            <option
-              value="https://www.slideshare.net/search?searchfrom=header&q="
-              id="SlideShare"
-            >
-              SlideShare
-            </option>
-            <option
-              value="https://www.youtube.com/results?search_query="
-              id="Youtube"
-            >
-              Youtube
-            </option>
-              <option value="https://www.lowes.com/search?searchTerm=" id = "lowes">
-                  Lowes
-              </option>
-              Amazon
-            </option>
-            <option value="https://www.walmart.com/search?q=" id="Walmart">
-              Walmart
-            </option>
-            <option value="https://www.target.com/s?searchTerm=" id="Target">
-              Target
-            </option>
-            <option
-              value="https://www.walgreens.com/search/results.jsp?Ntt="
-              id="Walgreens"
-            >
-              Walgreens
-            </option>
-            <option
-              value="https://www.wolframalpha.com/input?i="
-              id="Wolframalpha"
-            >
-              Wolframalpha
-            </option>
-            <option value="https://www.instacart.com/store/s?k=" id="Instacart">
-              Instacart
-            </option>
-            <option
-              value="https://www.costco.com/CatalogSearch?dept=All&keyword="
-              id="Costco"
-            >
-              Costco
-            </option>
-            <option
-              value="https://www.fredmeyer.com/search?query="
-              id="Fred Mayer"
-            >
-              Fred Mayer
-            </option>
-            <option
-              value="https://districtlms.seattleschools.org/search/user?s="
-              id="Schoology"
-            >
-              Schoology
-            </option>
-            <option
-              value="http://www.blogsearchengine.org/search.html?cx=partner-pub-9634067433254658%3A5laonibews6&cof=FORID%3A10&ie=ISO-8859-1&q="
-              id="BlogSE"
-            >
-              BlogSE
-            </option>
-            <option
-              value="https://www.urbandictionary.com/define.php?term="
-              id="Urban Dictionary"
-            >
-              Urban Dictionary
-            </option>
-            <option
-              value="https://www.pinterest.com/search/pins/?q="
-              id="Pinterest"
-            >
-              Pinterest
-            </option>
-            <option value="https://builtwith.com/" id="Builtwith">
-              Builtwith
-            </option>
-            <option
-              value="https://consumer.huawei.com/en/search/?keyword="
-              id="Huawei"
-            >
-              Huawei
-            </option>
-            <option value="https://www.asos.com/us/search/?q=" id="ASOS">
-              ASOS
-            </option>
-          </select>
-          <button onclick="fakeset(document.getElementById('SE'), null)">set</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tyap</title>
+        <script src="./script.js"></script>
+        <link href="./style.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <a href="https://www.wikipedia.org/">
+            <img src="https://raw.githubusercontent.com/asc2563/tyap-v2/main/hole.png" class="logo" alt="logo" />
+        </a>
+        <div id="search" class="search">
+            <input type="text" onchange="prepere_search(this.value)" placeholder="search the web" id="input" />
+            <button onclick="search()">search</button>
         </div>
-      </div>
-      </div>
-</body>
+        <button onclick="settings(document.getElementById('settings'))" class="settings">...</button>
+        <div id="settings" style="display: none;">
+            <div id="SEdiv">
+                <span class="big">set search engine</span>
+                <select id="SE">
+                    <option value="https://www.google.com/search?q=" id="Google">
+                        Default (Google)
+                    </option>
+                    <option value="https://www.bing.com/search?q=" id="Bing">Bing</option>
+                    <option value="https://search.yahoo.com/search?q=" id="Yahoo">
+                        Yahoo
+                    </option>
+                    <option value="https://openverse.org/search/?q=" id="Openverse">
+                        Openverse
+                    </option>
+                    <option value="https://en.wikipedia.org/wiki/Special:Search?go=Go&search=" id="Wiki">
+                        Wiki
+                    </option>
+                    <option value="https://www.slideshare.net/search?searchfrom=header&q=" id="SlideShare">
+                        SlideShare
+                    </option>
+                    <option value="https://www.youtube.com/results?search_query=" id="Youtube">
+                        Youtube
+                    </option>
+                    <option value="https://www.lowes.com/search?searchTerm=" id="lowes">
+                        Lowes
+                    </option>
+                    Amazon
+                    <option value="https://www.walmart.com/search?q=" id="Walmart">
+                        Walmart
+                    </option>
+                    <option value="https://www.target.com/s?searchTerm=" id="Target">
+                        Target
+                    </option>
+                    <option value="https://www.walgreens.com/search/results.jsp?Ntt=" id="Walgreens">
+                        Walgreens
+                    </option>
+                    <option value="https://www.wolframalpha.com/input?i=" id="Wolframalpha">
+                        Wolframalpha
+                    </option>
+                    <option value="https://www.instacart.com/store/s?k=" id="Instacart">
+                        Instacart
+                    </option>
+                    <option value="https://www.costco.com/CatalogSearch?dept=All&keyword=" id="Costco">
+                        Costco
+                    </option>
+                    <option value="https://www.fredmeyer.com/search?query=" id="Fred Mayer">
+                        Fred Mayer
+                    </option>
+                    <option value="https://districtlms.seattleschools.org/search/user?s=" id="Schoology">
+                        Schoology
+                    </option>
+                    <option value="http://www.blogsearchengine.org/search.html?cx=partner-pub-9634067433254658%3A5laonibews6&cof=FORID%3A10&ie=ISO-8859-1&q=" id="BlogSE">
+                        BlogSE
+                    </option>
+                    <option value="https://www.urbandictionary.com/define.php?term=" id="Urban Dictionary">
+                        Urban Dictionary
+                    </option>
+                    <option value="https://www.pinterest.com/search/pins/?q=" id="Pinterest">
+                        Pinterest
+                    </option>
+                    <option value="https://builtwith.com/" id="Builtwith">
+                        Builtwith
+                    </option>
+                    <option value="https://consumer.huawei.com/en/search/?keyword=" id="Huawei">
+                        Huawei
+                    </option>
+                    <option value="https://www.asos.com/us/search/?q=" id="ASOS">
+                        ASOS
+                    </option>
+                </select>
+                <button onclick="fakeset(document.getElementById('SE'), null)">set</button>
+            </div>
+        </div>
+    </body>
 </html>
 
 &copy; aluben services inc 2024 all rights reserved
