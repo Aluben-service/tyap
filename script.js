@@ -1,42 +1,40 @@
-addEventListener("keydown", function (event) {
+// Listen for 'Enter' key to trigger search
+document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         search();
     }
 });
+
+// Display the currently selected search engine
 function displaySE() {
-    var currentSE = document.getElementById("SE");
-    var se = currentSE[currentSE.selectedIndex].id;
-    alert("You are now searching on " + se);
-    var SE = currentSE[currentSE.selectedIndex].value;
-    return SE;
+    const currentSE = document.getElementById("SE");
+    const seId = currentSE[currentSE.selectedIndex].id;
+    alert(`You are now searching on ${seId}`);
+    return currentSE[currentSE.selectedIndex].value;
 }
 
-function fakeset(box, boxid) {
-    boxid = box[box.selectedIndex].id;
-    alert("you are now searching on " + boxid);
+// Toggle display of the settings menu
+function toggleSettings() {
+    const settingsDiv = document.getElementById("settings");
+    settingsDiv.style.display = settingsDiv.style.display === "none" ? "block" : "none";
 }
 
-function settings(div) {
-    if (div.style.display === "none") {
-        div.style.display = "block";
-    } else if (div.style.display === "block") {
-        div.style.display = "none";
-    }
-}
-
+// Perform the search based on user input
 function search() {
-    var searchbox = document.getElementById("input");
-    var url = searchbox.value;
+    const searchbox = document.getElementById("input");
+    const url = searchbox.value.trim();
+    const engineval = document.getElementById("SE");
+    const searchEngine = engineval[engineval.selectedIndex].value;
+
+    // Redirect based on whether the input is a URL or a search term
     if (url.includes("://")) {
-        window.location = url;
-        searchbox.value = "";
+        window.location.href = url;
     } else if (url.includes(".")) {
-        window.location = "https://" + url;
-        searchbox.value = "";
+        window.location.href = `https://${url}`;
     } else {
-        var engineval = document.getElementById("SE");
-        var engine = engineval[engineval.selectedIndex].value;
-        window.location = engine + url;
-        searchbox.value = "";
+        window.location.href = `${searchEngine}${url}`;
     }
+
+    // Clear the input field after searching
+    searchbox.value = "";
 }
